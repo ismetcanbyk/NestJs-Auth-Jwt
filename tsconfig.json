@@ -16,6 +16,32 @@
     "noImplicitAny": false,
     "strictBindCallApply": false,
     "forceConsistentCasingInFileNames": false,
-    "noFallthroughCasesInSwitch": false
+    "noFallthroughCasesInSwitch": false,
+    "paths": {
+      "@database": [
+        "libs/database/src"
+      ],
+      "@database/*": [
+        "libs/database/src/*"
+      ],
+      "@auth": [
+        "libs/auth/src"
+      ],
+      "@auth/*": [
+        "libs/auth/src/*"
+      ],
+      "@guards": [
+        "libs/guards/src"
+      ],
+      "@guards/*": [
+        "libs/guards/src/*"
+      ],
+      "@shared": [
+        "libs/shared/src"
+      ],
+      "@shared/*": [
+        "libs/shared/src/*"
+      ]
+    }
   }
 }
