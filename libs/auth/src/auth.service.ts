@@ -6,6 +6,7 @@ import {
 import { JwtService } from '@nestjs/jwt';
 import { UserService } from '@database/modules';
 import { validatePassword } from './utils/validation';
+import { Prisma } from '@prisma/client';
 
 @Injectable()
 export class AuthService {
@@ -14,15 +15,15 @@ export class AuthService {
     private readonly jwtService: JwtService,
   ) {}
 
-  async reqister({ email, password }) {
+  async reqister(data) {
+    const { email } = data as Prisma.UserCreateInput;
     const user = await this.userService.findOne({ email });
     if (user) {
       throw new BadRequestException('Email already exists');
     }
 
     const newUser = await this.userService.create({
-      email,
-      password,
+      ...data,
     });
     return newUser;
   }
