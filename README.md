@@ -1,74 +1,91 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
-</p>
+# NestJS Authentication with JWT
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+This repository demonstrates how to implement user authentication in a NestJS application using JWT (JSON Web Tokens). The project is designed to provide a clean and modular structure for authentication and authorization processes.
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+## Features
 
-## Description
+- **User Authentication**: Secure user login with JWT.
+- **Registration System**: Allows users to create accounts.
+- **Role-Based Authorization**: Define and manage user roles.
+- **Validation**: Ensures proper input data for registration and login.
+- **Environment Configuration**: `.env` file for managing sensitive configurations.
+- **Scalable Structure**: Modular and extensible for adding more features.
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+## Tech Stack
 
-## Installation
+- **NestJS**: Framework for building scalable server-side applications.
+- **JWT**: Secure token-based authentication.
+- **TypeScript**: Strongly typed programming language for better development experience.
+
+## Getting Started
+
+### Prerequisites
+
+Ensure you have the following installed on your system:
+
+- [Node.js](https://nodejs.org/) (v16 or later)
+- [npm](https://www.npmjs.com/) or [Yarn](https://yarnpkg.com/)
+- A compatible database (e.g., PostgreSQL)
+
+### Installation
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/ismetcanbyk/NestJs-Auth-Jwt.git
+   cd NestJs-Auth-Jwt
+   ```
+
+2. Install dependencies:
+
+   ```bash
+   npm install
+   ```
+
+3. Set up environment variables:
+
+   Create a `.env` file in the project root and configure the following variables:
+
+   ```env
+   DATABASE_URL=<your_database_url>
+   JWT_SECRET=<your_jwt_secret>
+   PORT=8082
+   ```
+
+### Running the Application
+
+1. Start the development server:
+
+   ```bash
+   npm run start:dev
+   ```
+
+2. Access the API at `http://localhost:8082`.
+
+### Testing
+
+Run the test suite:
 
 ```bash
-$ npm install
+npm run test
 ```
 
-## Running the app
+## API Endpoints
 
-```bash
-# development
-$ npm run start
+- **POST /auth/register**: Register a new user.
+- **POST /auth/login**: Authenticate a user and return a JWT.
+- **GET /profile**: Access the authenticated user's profile (requires valid JWT).
 
-# watch mode
-$ npm run start:dev
+## Folder Structure
 
-# production mode
-$ npm run start:prod
-```
+- **src/auth**: Contains authentication logic, guards, and strategies.
+- **src/users**: User entity and service for user management.
+- **src/common**: Shared modules, pipes, and filters.
 
-## Test
+## Contributing
 
-```bash
-# unit tests
-$ npm run test
-
-# e2e tests
-$ npm run test:e2e
-
-# test coverage
-$ npm run test:cov
-```
-
-## Support
-
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
-
-## Stay in touch
-
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+Contributions are welcome! Please fork the repository and submit a pull request for review.
 
 ## License
 
-Nest is [MIT licensed](LICENSE).
-# NestJs-Auth-Jwt
+This project is licensed under the MIT License.
